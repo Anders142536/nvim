@@ -32,14 +32,25 @@ nnoremap <C-_> <Leader>c<Space>
 inoremap <C-_> <Esc><leader>c<Space>
 vnoremap <C-_> <Leader>c<Space>
 
-call plug#begin(stdpath('data') . 'plugged')
+" windows version of plugin loading
+if has ('win64')
+	call plug#begin('~/AppData/Local/nvim/plugged')
+		Plug 'marko-cerovac/material.nvim'
+		Plug 'scrooloose/nerdtree'
+		Plug 'ryanoasis/vim-devicons'
+		Plug 'preservim/nerdcommenter'
+	call plug#end()
+endif
 
-Plug 'marko-cerovac/material.nvim'
-Plug 'scrooloose/nerdtree'
-Plug 'ryanoasis/vim-devicons'
-Plug 'preservim/nerdcommenter'
-
-call plug#end()
+" linux version of plugin loading
+if has('unix')
+	call plug#begin(stdpath('data') . 'plugged')
+		Plug 'marko-cerovac/material.nvim'
+		Plug 'scrooloose/nerdtree'
+		Plug 'ryanoasis/vim-devicons'
+		Plug 'preservim/nerdcommenter'
+	call plug#end()
+endif
 
 colorscheme material
 :lua require('material.functions').change_style("darker")
