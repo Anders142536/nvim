@@ -27,6 +27,9 @@ call plug#begin(configpath)
 	endif
 call plug#end()
 
+set nofoldenable
+set foldmethod=indent
+
 " if NOT embedded in vs code
 if !exists('g:vscode')
 	set tabstop=4
@@ -105,7 +108,3 @@ EOF
 	augroup END
 
 endif
-
-
-
-
