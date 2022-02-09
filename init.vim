@@ -39,11 +39,21 @@ if !exists('g:vscode')
 	set cursorline
 	set cc=80
 
-	" folding
+	" FOLDING
 	" treesitter based folding, replaces 'syntax'
 	set foldmethod=expr
 	set foldexpr=nvim_treesitter#foldexpr()
 	set foldlevel=2
+
+	function FoldText()
+		let line = getline(v:foldstart)
+		let numOfLines = v:foldend - v:foldstart
+		let fillCount = winwidth('%') - len(line) - len(numOfLines) - 14
+		return line . '  ' . repeat('.', fillCount) . ' (' . numOfLines . ' L)'
+	endfunction
+	set foldtext=FoldText()
+	set fillchars=fold:\ 
+
 
 	" set foldlevelstart=1
 	
