@@ -5,19 +5,18 @@ let configpath = has ('win64') ? '~/AppData/Local/nvim/plugged' : stdpath('data'
 call plug#begin(configpath)
 	" plugins for outside of vs code exclusively
 	if !exists('g:vscode')
-		" theming
-		Plug 'marko-cerovac/material.nvim'
-		Plug 'nvim-treesitter/nvim-treesitter', {'do': ';TSUpdate'} " requ by one below
+		" THEMEING
+
+		" the do is required by nvcode-color-schemes
+		Plug 'nvim-treesitter/nvim-treesitter', {'do': ';TSUpdate'}
 		Plug 'christianchiarulli/nvcode-color-schemes.vim'
+
+		" SYNTAX HIGHLIGHTING
+		" Plug 'evanleck/vim-svelte'
 
 		Plug 'scrooloose/nerdtree'
 		Plug 'ryanoasis/vim-devicons'
 		Plug 'preservim/nerdcommenter'
-
-		" Syntax highlighting
-		Plug 'evanleck/vim-svelte'
-		Plug 'pangloss/vim-javascript'
-		Plug 'HerringtonDarkholme/yats.vim'  "Typescript
 
 		" Conquer of Completion, takes care of autocompletes
 		Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -42,6 +41,14 @@ if !exists('g:vscode')
 	set mouse=a
 	set cursorline
 	set cc=80
+
+	" folding
+	" treesitter based folding, replaces 'syntax'
+	set foldmethod=expr
+	set foldexpr=nvim_treesitter#foldexpr()
+	set foldlevel=2
+
+	" set foldlevelstart=1
 	
 	" move line or visually selected block - alt+j/k
 	inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -72,21 +79,23 @@ if !exists('g:vscode')
 	" colorscheme material
 	" :lua require('material.functions').change_style("darker")
 	
-	" configure treesitter
+" configure treesitter, has to be at the beginning of the line!
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-	ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-	   highlight = {
-	     enable = true,              -- false will disable the whole extension
-	     disable = { "c", "rust" },  -- list of language that will be disabled
-	   },
+	-- one of "all", "maintained" (parsers with maintainers),
+	-- or a list of languages
+	ensure_installed = 'all', 
+	highlight = {
+		enable = true,              -- false will disable the whole extension
+		disable = { 'c', 'rust' },  -- list of language that will be disabled
+	},
 }
 EOF
 		 
 	" configure nvcode-color-schemes
 	let g:nvcode_termcolors=256
 	
-	colorscheme aurora " Or whatever colorscheme you make "
+ 	colorscheme aurora " Or whatever colorscheme you make "
 		 
 		 
 	" checks if your terminal has 24-bit color support "
@@ -99,7 +108,8 @@ EOF
 		" clearing all auto comamnds, i think?
 		autocmd!
 
-		" Start NERDTree, unless a file or session is specified, eg. vim -S session_file.vim.
+		" Start NERDTree, unless a file or session is specified,
+		" eg. vim -S session_file.vim.
 		autocmd StdinReadPre * let s:std_in=1
 		autocmd VimEnter * if argc() == 0 && !exists('s:std_in') && v:this_session == '' | NERDTree | wincmd p | endif
 
