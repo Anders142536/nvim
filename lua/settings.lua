@@ -1,23 +1,15 @@
-print('doing settings...')
+-- shorthand for all options
+local o = vim.opt
 
--- global, window local and buffer local settings
-local o = vim.o
-local wo = vim.wo
-local bo = vim.bo
+o.breakindent = true
+o.number = true
+o.relativenumber = true
+o.colorcolumn = '80'
+o.cursorline = true
+o.tabstop = 4
+o.softtabstop = 4
+o.shiftwidth = 4
+o.syntax = 'on'
 
-
--- global options
-
-
--- window local options
-wo.breakindent = true
-wo.number = true
-wo.relativenumber = true
-
-
--- buffer local options
-bo.tabstop = 4
-bo.softtabstop = 4
-bo.shiftwidth = 4
-
-print('end of settings')
+-- required by at least the file explorer
+vim.opt.termguicolors = true
