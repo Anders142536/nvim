@@ -23,8 +23,8 @@ require('colors')
 require('tree')
 require('statusline')
 require('gitsigns-config')
+require('coc')
 
-vim.cmd('source coc.vim')
 
 
 
