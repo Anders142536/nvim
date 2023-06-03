@@ -6,9 +6,9 @@ o.number = true
 o.relativenumber = true
 o.colorcolumn = '80'
 o.cursorline = true
-o.tabstop = 4
-o.softtabstop = 4
-o.shiftwidth = 4
+o.tabstop = 2
+o.softtabstop = 2
+o.shiftwidth = 2
 o.syntax = 'on'
 
 -- required by at least the file explorer
