@@ -3,6 +3,8 @@
 
 vim.cmd([[
 
+let g:vim_svelte_plugin_use_typescript = 1
+
 " confirms selection in completion list
 inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 

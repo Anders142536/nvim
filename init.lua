@@ -1,18 +1,18 @@
 -- plugins
 
 require "paq" {
-	"savq/paq-nvim";					-- paq itself
-	"nvim-tree/nvim-web-devicons";		-- required by file explorer
-	"nvim-tree/nvim-tree.lua";			-- file explorer
-	"EdenEast/nightfox.nvim";			-- color schemes
+	"savq/paq-nvim",					-- paq itself
+	"nvim-tree/nvim-web-devicons",		-- required by file explorer
+	"nvim-tree/nvim-tree.lua",			-- file explorer
+	"EdenEast/nightfox.nvim",			-- color schemes
 
-	"freddiehaddad/feline.nvim";		-- status line
-	"lewis6991/gitsigns.nvim";			-- adds git integration
+	"freddiehaddad/feline.nvim",		-- status line
+	"lewis6991/gitsigns.nvim",			-- adds git integration
+	"leafOfTree/vim-svelte-plugin",		-- syntax highlighter for svelte
 
 	-- Conquer of Completion, adds language support
-	{"neoclide/coc.nvim", branch="release"};
+	{"neoclide/coc.nvim", branch="release"}
 
-	"leafOfTree/vim-svelte-plugin"		-- syntax highlighter for svelte
 }
 
 
