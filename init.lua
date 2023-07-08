@@ -1,31 +1,43 @@
 -- plugins
 
-require "paq" {
-	"savq/paq-nvim",					-- paq itself
-	"nvim-tree/nvim-web-devicons",		-- required by file explorer
-	"nvim-tree/nvim-tree.lua",			-- file explorer
-	"EdenEast/nightfox.nvim",			-- color schemes
+require 'paq' {
+	-- paq itself
+	'savq/paq-nvim',
+	'nvim-tree/nvim-web-devicons',		-- required by file explorer
+	'lewis6991/gitsigns.nvim',				-- adds git integration
 
-	"freddiehaddad/feline.nvim",		-- status line
-	"lewis6991/gitsigns.nvim",			-- adds git integration
-	"leafOfTree/vim-svelte-plugin",		-- syntax highlighter for svelte
+	-- color schemes and themes
+	'EdenEast/nightfox.nvim',					-- color schemes
 
-	-- Conquer of Completion, adds language support
-	{"neoclide/coc.nvim", branch="release"}
+	-- layout stuff
+	'nvim-tree/nvim-tree.lua',				-- file explorer
+	'freddiehaddad/feline.nvim',			-- status line
 
+	-- Mason and stuff to set it up
+	-- A plugin for LSP and debuggers
+	{ 'williamboman/mason.nvim', run = ':MasonUpdate' },
+	'williamboman/mason-lspconfig.nvim',
+	'neovim/nvim-lspconfig',
+	--'mfussenegger/nvim-dap',
+	--'rcarriga/nvim-dap-ui',
+
+	-- syntax highlighting, as LSP highlighting is not ideal
+	'leafOfTree/vim-svelte-plugin',		
 }
-
 
 
 require('settings')
 require('keybinds')
+
+require('gitsigns-config')
+
 require('colors')
+
 require('tree')
 require('statusline')
-require('gitsigns-config')
-require('coc')
+
+require('lsp-config')
 
 
-
-
+vim.g.vim_svelte_plugin_use_typescript = true
 

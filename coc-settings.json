@@ -1,5 +1,0 @@
-{
-  "svelte.enable-ts-plugin": true,
-  "coc.preferences.formatOnSaveFileTypes": [
-	  "css", "js", "ts", "svelte", "html"]
-}
