@@ -13,3 +13,6 @@ o.syntax = 'on'
 
 -- required by at least the file explorer
 vim.opt.termguicolors = true
+
+-- prevents some weird split opening on <C-Space> Completion
+vim.opt.completeopt = 'menu'
