@@ -4,14 +4,13 @@ require 'paq' {
 	-- paq itself
 	'savq/paq-nvim',
 	'nvim-tree/nvim-web-devicons',    -- required by file explorer for file icons
-	-- 'lewis6991/gitsigns.nvim',        -- adds git integration
+	'lewis6991/gitsigns.nvim',        -- adds git integration
 
 	-- color schemes and themes
 	'EdenEast/nightfox.nvim',         -- color schemes, currently unused
 
 	-- layout stuff
 	'nvim-tree/nvim-tree.lua',        -- file explorer
-	-- 'freddiehaddad/feline.nvim',      -- status line
 
 	-- Mason and stuff to set it up
 	-- A plugin for LSP and debuggers
@@ -29,12 +28,11 @@ require 'paq' {
 require('settings')
 require('keybinds')
 
--- require('gitsigns-config')
+require('gitsigns-config')
 
 require('colors')
 
 require('tree')
--- require('statusline')
 
 -- require('lsp-config')
 

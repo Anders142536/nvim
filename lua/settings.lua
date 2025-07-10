@@ -1,6 +1,7 @@
 -- shorthand for all options
 local o = vim.opt
 
+-->  Aaaaa
 
 o.breakindent = true         -- wrapped line repeats indent
 o.number = true              -- print the line number in front of each line
@@ -12,9 +13,7 @@ o.softtabstop = 2            -- number of spaces that <Tab> uses while editing
 o.shiftwidth = 2             -- number of spaces to use for (auto)indent step
 o.list = true                -- show <Tab> and <EOL>
 o.syntax = 'on'              -- syntax to be loaded for current buffer
-
--- required by at least the file explorer
--- o.termguicolors = true
+o.scrolloff = 2              -- Min lines above or below cursor
 
 -- prevents some weird split opening on <C-Space> Completion
 -- o.completeopt = 'menu'
