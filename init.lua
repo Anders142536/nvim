@@ -13,12 +13,7 @@ require 'paq' {
 	'nvim-tree/nvim-tree.lua',        -- file explorer
 
 	-- Mason and stuff to set it up
-	-- A plugin for LSP and debuggers
-	-- { 'williamboman/mason.nvim', run = ':MasonUpdate' },
-	-- 'williamboman/mason-lspconfig.nvim',
-	-- 'neovim/nvim-lspconfig',
-	-- 'mfussenegger/nvim-dap',
-	-- 'rcarriga/nvim-dap-ui',
+	'mason-org/mason.nvim',
 
 	-- syntax highlighting, as LSP highlighting is not ideal
 	-- 'leafOfTree/vim-svelte-plugin',
@@ -34,6 +29,7 @@ require('colors')
 
 require('tree')
 
+require('mason').setup()
 -- require('lsp-config')
 
 
