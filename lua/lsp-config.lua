@@ -8,7 +8,7 @@ local on_attach = function(_, _)
 	vim.keymap.set('n', 'gd', vim.lsp.buf.definition , {})
 	vim.keymap.set('n', 'gi', vim.lsp.buf.implementation , {})
 	--vim.keymap.set('n', 'gr', require('telescope.buildin').lsp_references, {})
-	vim.keymap.set('n', 'K', vim.lsp.buf.hover , {})
+	-- vim.keymap.set('n', 'K', vim.lsp.buf.hover , {})
 
 	vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
