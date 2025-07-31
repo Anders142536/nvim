@@ -14,6 +14,7 @@ o.shiftwidth = 2             -- number of spaces to use for (auto)indent step
 o.list = true                -- show <Tab> and <EOL>
 o.syntax = 'on'              -- syntax to be loaded for current buffer
 o.scrolloff = 2              -- Min lines above or below cursor
+o.foldmethod = 'syntax'      -- using syntax information for folding
 
 -- prevents some weird split opening on <C-Space> Completion
 -- o.completeopt = 'menu'

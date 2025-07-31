@@ -12,6 +12,10 @@ require 'paq' {
 	'mason-org/mason.nvim',           -- installs LSP servers
 	'neovim/nvim-lspconfig',          -- configures LSP servers
 	'mason-org/mason-lspconfig.nvim',
+	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+
+	-- formatting
+	'stevearc/conform.nvim',
 
 	-- scm
 	'lewis6991/gitsigns.nvim',        -- adds git integration
@@ -35,11 +39,15 @@ require('tree')
 require('mason').setup()
 require('mason-lspconfig').setup()
 
+require('treesitter')
+
+require('formatter')
+
 require('gitsigns-config')
 
 
 
 
--- require('colors')
+require('colors')
 -- vim.g.vim_svelte_plugin_use_typescript = true
 
