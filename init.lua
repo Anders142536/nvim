@@ -13,6 +13,7 @@ require 'paq' {
 	'neovim/nvim-lspconfig', -- configures LSP servers
 	'mason-org/mason-lspconfig.nvim',
 	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+	'mfussenegger/nvim-lint', -- handles linters, probably installed via mason
 
 	-- formatting
 	'stevearc/conform.nvim',
@@ -42,6 +43,7 @@ require('tree')
 
 require('mason').setup()
 require('mason-lspconfig').setup({})
+require('linter')
 
 require('treesitter')
 
