@@ -14,6 +14,7 @@ o.syntax = 'on'         -- syntax to be loaded for current buffer
 o.scrolloff = 2         -- Min lines above or below cursor
 o.foldmethod = 'syntax' -- using syntax information for folding
 o.foldlevel = 99        -- everything should be unfolded by default
+o.signcolumn = 'yes'    -- never hides the sign column errors and gitsigns are rendered in
 
 -- prevents some weird split opening on <C-Space> Completion
 -- o.completeopt = 'menu'

@@ -15,6 +15,9 @@ require 'paq' {
 	{ 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
 	'mfussenegger/nvim-lint', -- handles linters, probably installed via mason
 
+	-- language specific stuff
+	'tadmccorkle/markdown.nvim',
+
 	-- formatting
 	'stevearc/conform.nvim',
 
@@ -46,6 +49,8 @@ require('mason-lspconfig').setup({})
 require('linter')
 
 require('treesitter')
+
+require('markdown').setup()
 
 require('formatter')
 
