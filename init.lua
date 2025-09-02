@@ -57,8 +57,7 @@ require('formatter')
 require('autoclose').setup()
 require('nvim-ts-autotag').setup()
 
-require('gitsigns-config')
-
+require('gitsigns').setup()
 
 
 
